@@ -5,6 +5,7 @@ import java.io.InputStream;
 import java.io.InputStreamReader;
 
 import br.com.groovy.iface.Resultado;
+import br.com.groovy.model.POJOGroovy;
 import groovy.lang.Binding;
 import groovy.lang.GroovyShell;
 
@@ -12,6 +13,9 @@ public class Teste {
 	private StringBuilder sb = new StringBuilder();
 
 	public Teste() {
+		POJOGroovy gclass = new POJOGroovy();
+		System.out.println(gclass);
+		gclass.invocaJava();
 		try (InputStream input = getClass().getClassLoader().getResourceAsStream("script.groovy")) {
 			BufferedReader br = new BufferedReader(new InputStreamReader(input));
 			String linha = null;
